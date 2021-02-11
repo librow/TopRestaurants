@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Restaurant Suggestions";   //assigning new title
+}
+
+@*Bringing in model that creates the object from the form below*@
+@model TopRestaurants.Models.Suggestion
+
+<h1>Submit a restaurant here:</h1>
+<form asp-action="Suggestions" method="post">
+    <div>
+        <label asp-for="Name">Name</label>@Html.ValidationMessageFor(model => model.Name)   @*Html validation puts the error message next to input box*@
+        <input asp-for="Name" required />
+    </div>
+    <div>
+        <label asp-for="RestName">Restaurant Name</label>
+        <input asp-for="RestName" required />@Html.ValidationMessageFor(model => model.RestName)
+    </div>
+    <div>
+        <label asp-for="FavDish">Favorite Dish</label>
+        <input asp-for="FavDish" />@Html.ValidationMessageFor(model => model.FavDish)
+    </div>
+    <div>
+        <label asp-for="PhoneNum">Phone Number</label>
+        <input asp-for="PhoneNum" required />@Html.ValidationMessageFor(model => model.PhoneNum)
+    </div>
+    <button class="btn btn-light" type="submit">Submit</button>
+</form>

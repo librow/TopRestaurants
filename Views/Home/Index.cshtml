@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";    //changes title for this view
+}
+
+@*References list of strings created in Controller*@
+@model IEnumerable<string>
+
+<body>
+    <header>
+        <h1>Top 100 Restaurants</h1>
+    </header>
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome!</h1>
+        <h4> This web page can fulfill all of your restaurant reconnaissance needs.</h4>
+        <br />
+    </div>
+
+    <div>
+        <ul>
+            @foreach (string r in Model)    //loops through and prints the strings in the list from the controller
+            {
+                <li>@r</li>
+            }
+        </ul>
+    </div>
+
+    @*images*@
+    <div>
+        <img src="~/img/gurus.jfif" width="200" />
+        <img src="~/img/cubbyFood.jfif" width="200" />
+        <img src="~/img/7broBurger.jfif" width="200" />
+        <img src="~/img/twoJacks.jfif" width="200" />
+        <img src="~/img/kohinoor.jfif" width="200"/>
+
+    </div>
+</body>

@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Submissions";
+}
+
+@*Referencing Suggestion model*@ 
+@model IEnumerable<TopRestaurants.Models.Suggestion>
+
+
+<h1>Suggestions:</h1>
+<div>
+    @*prints out table of all the objects created from user suggestions*@
+    <table>
+        <thead>
+            <tr><th>Name</th><th>Restaurant Name</th><th>Favorite Dish</th><th>Phone Number</th></tr>
+        </thead>
+
+        <tbody>
+            @foreach (TopRestaurants.Models.Suggestion s in Model)  //loops through and prints out each feature of the Suggestion model
+            {
+                <tr>
+                    <td>@s.Name</td>
+                    <td>@s.RestName</td>
+                    <td>@s.FavDish</td>
+                    <td>@s.PhoneNum</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
